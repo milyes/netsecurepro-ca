@@ -1,123 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NetSecurePro - IA, Cybersécurité, Développement Mobile Intelligent" />
-  <title>NetSecurePro | IA & Cybersécurité</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-</head>
-<body class="bg-gray-900 text-white font-sans">
-  <!-- Splash Banner -->
-  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-purple-900 to-black">
-    <h1 class="text-5xl font-bold mb-4">NetSecurePro</h1>
-    <p class="text-xl mb-6">Cybersécurité & Intelligence Artificielle Mobile</p>
-    <a href="#services" class="bg-purple-600 hover:bg-purple-800 px-6 py-2 rounded-lg">Explorer</a>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="py-16 px-4 text-center">
-    <h2 class="text-3xl font-semibold mb-8">Nos Services</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Audit Cybersécurité</h3>
-        <p>Analyse des vulnérabilités, monitoring, gestion des risques.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Intelligence Artificielle</h3>
-        <p>Modules IA personnalisés, assistants vocaux, analyse automatisée.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Applications Mobiles</h3>
-        <p>Développement Flutter, Termux CLI, APK IA offline/online.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Chatbot IA -->
-  <section class="py-16 px-4 bg-black text-center">
-    <h2 class="text-3xl font-semibold mb-6">Assistant IA</h2>
-    <p class="mb-4">Posez votre question à notre IA intégrée :</p>
-    <textarea id="userInput" class="w-full max-w-md mx-auto p-4 text-black rounded" placeholder="Décrivez votre besoin..."></textarea>
-    <button onclick="sendToIA()" class="mt-4 px-6 py-2 bg-purple-600 hover:bg-purple-800 rounded">Envoyer à l'IA</button>
-    <p id="iaResponse" class="mt-6 text-green-400"></p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-4 bg-gray-800 text-center">
-    <h2 class="text-3xl font-semibold mb-6">Contact</h2>
-    <form class="max-w-md mx-auto">
-      <input type="text" placeholder="Nom" class="w-full mb-4 p-3 text-black rounded" required />
-      <input type="email" placeholder="Email" class="w-full mb-4 p-3 text-black rounded" required />
-      <textarea placeholder="Votre message..." class="w-full mb-4 p-3 text-black rounded" required></textarea>
-      <button type="submit" class="bg-green-600 hover:bg-green-800 px-6 py-2 rounded">Envoyer</button>
-    </form>
-  </section>
-
-
-  <!-- Bouton -->
-<button onclick="document.getElementById('modalIA22').style.display='block'" style="
-  padding: 10px 20px;
-  background-color: #00ffaa;
-  color: #000;
-  font-weight: bold;
-  font-family: 'Courier New', monospace;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,255,170,0.4);
-  cursor: pointer;">
-  📇 À propos de l’auteur IA22
-</button>
-
-<!-- Fenêtre modale -->
-<div id="modalIA22" style="
-  display:none;
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background-color:rgba(0,0,0,0.8);
-  z-index:9999;
-  text-align:center;
-  padding-top:60px;">
-  <div style="
-    background-color:#1a1a1a;
-    margin:auto;
-    padding:20px;
-    border:1px solid #00ffaa;
-    border-radius:12px;
-    width:80%;
-    max-width:600px;
-    box-shadow:0 0 15px rgba(0,255,170,0.3);">
-    <span onclick="document.getElementById('modalIA22').style.display='none'" style="
-      float:right;
-      font-size:28px;
-      font-weight:bold;
-      cursor:pointer;
-      color:#00ffaa;">&times;</span>
-    <img src="https://milyes.github.io/assets/auteur_IA22.png" alt="Carte IA22" style="width:100%; border-radius:8px; margin-top:10px;">
-    <p style="color:#ccc; font-family:'Courier New'; margin-top:12px;">
-      Zoubirou – Architecte IA22<br>
-      <a href="https://orcid.org/0009-0007-7571-3178" style="color:#00ffaa;" target="_blank">ORCID : 0009-0007-7571-3178</a><br>
-      <a href="https://milyes.github.io/IA22_LOGIC_ALGORITHM_FULL/" style="color:#00ffaa;" target="_blank">Voir le projet IA22</a>
-    </p>
-  </div>
-</div>
-
-  <!-- Footer -->
-  <footer class="py-8 text-center bg-gray-900">
-    <p class="text-sm">&copy; 2025 NetSecurePro - Zoubirou Mohammed Ilyes | <a href="https://orcid.org/0009-0007-7571-3178" class="text-purple-400">ORCID</a></p>
-  </footer>
-
-  <script>
-    function sendToIA() {
-      const input = document.getElementById("userInput").value;
-      const responseEl = document.getElementById("iaResponse");
-      if (input.toLowerCase().includes("audit")) {
-        responseEl.innerText = "L'IA recommande un audit de vulnérabilités en 3 étapes. Contactez-nous pour un devis personnalisé.";
-      } else {
-        responseEl.innerText = "Merci pour votre question. Un expert IA vous répondra sous peu.";
-      }
+  <meta charset="UTF-8">
+  <title>Cockpit IA22 – Carte Auteur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      margin: 0;
+      padding: 40px 10px;
     }
-  </script>
+    button {
+      padding: 12px 24px;
+      background-color: #00ffaa;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,255,170,0.4);
+      cursor: pointer;
+      font-size: 1rem;
+      max-width: 320px;
+      margin: 20px auto;
+      display: block;
+    }
+    #modalIA22 {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #111;
+      padding: 20px;
+      border-radius: 14px;
+      width: 90%;
+      max-width: 380px;
+      box-shadow: 0 0 20px rgba(0,255,170,0.3);
+      text-align: center;
+      position: relative;
+    }
+    .modal-content a {
+      color: #00ffaa;
+      text-decoration: none;
+    }
+    .modal-content a:hover {
+      text-decoration: underline;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-size: 26px;
+      cursor: pointer;
+      color: #00ffaa;
+    }
+    .badge-anim {
+      width: 120px;
+      height: 120px;
+      background-color: #00ffaa;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 12px rgba(0,255,170,0.6);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bouton d'ouverture -->
+  <button onclick="document.getElementById('modalIA22').style.display='flex'">
+    📇 À propos IA22 – Mobile
+  </button>
+
+  <!-- Fenêtre modale -->
+  <div id="modalIA22">
+    <div class="modal-content">
+      <span class="close-btn" onclick="document.getElementById('modalIA22').style.display='none'">&times;</span>
+      <div class="badge-anim"></div>
+      <h3>Zoubirou | Architecte IA22</h3>
+      <p><em>“Une IA qui écoute. Qui signe. Qui refuse de deviner.”</em></p>
+      <p><a href="https://orcid.org/0009-0007-7571-3178" target="_blank">ORCID : 0009-0007-7571-3178</a></p>
+      <p><a href="https://milyes.github.io/IA22_LOGIC_ALGORITHM_FULL/" target="_blank">→ Voir le projet IA22</a></p>
+    </div>
+  </div>
+
 </body>
 </html>
