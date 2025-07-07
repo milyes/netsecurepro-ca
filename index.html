@@ -2,100 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Cockpit IA22 – Carte Auteur</title>
+  <title>IA22 | Cockpit Auteur</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background-color: #0d0d0d;
-      color: #e0e0e0;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-      margin: 0;
-      padding: 40px 10px;
-    }
-    button {
-      padding: 12px 24px;
-      background-color: #00ffaa;
-      color: #000;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,255,170,0.4);
-      cursor: pointer;
-      font-size: 1rem;
-      max-width: 320px;
-      margin: 20px auto;
-      display: block;
-    }
-    #modalIA22 {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.85);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: #111;
-      padding: 20px;
-      border-radius: 14px;
-      width: 90%;
-      max-width: 380px;
-      box-shadow: 0 0 20px rgba(0,255,170,0.3);
-      text-align: center;
-      position: relative;
-    }
-    .modal-content a {
-      color: #00ffaa;
-      text-decoration: none;
-    }
-    .modal-content a:hover {
-      text-decoration: underline;
-    }
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      font-size: 26px;
-      cursor: pointer;
-      color: #00ffaa;
-    }
-    .badge-anim {
-      width: 120px;
-      height: 120px;
-      background-color: #00ffaa;
-      border-radius: 50%;
-      margin: 0 auto 15px;
-      animation: pulse 2s infinite;
-      box-shadow: 0 0 12px rgba(0,255,170,0.6);
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.15); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.8; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <!-- Bouton d'ouverture -->
-  <button onclick="document.getElementById('modalIA22').style.display='flex'">
-    📇 À propos IA22 – Mobile
-  </button>
-
-  <!-- Fenêtre modale -->
-  <div id="modalIA22">
-    <div class="modal-content">
-      <span class="close-btn" onclick="document.getElementById('modalIA22').style.display='none'">&times;</span>
-      <div class="badge-anim"></div>
-      <h3>Zoubirou | Architecte IA22</h3>
-      <p><em>“Une IA qui écoute. Qui signe. Qui refuse de deviner.”</em></p>
-      <p><a href="https://orcid.org/0009-0007-7571-3178" target="_blank">ORCID : 0009-0007-7571-3178</a></p>
-      <p><a href="https://milyes.github.io/IA22_LOGIC_ALGORITHM_FULL/" target="_blank">→ Voir le projet IA22</a></p>
-    </div>
-  </div>
-
+  <h1>🧠 IA22 | Identité Auteur</h1>
+  <p>Clique ci-dessous pour afficher la carte d’auteur IA :</p>
+  <a href="about-author.html" style="display:inline-block;padding:12px 24px;
+    background:#00ffaa;color:#000;text-decoration:none;
+    border-radius:8px;font-family:'Courier New';font-weight:bold;
+    box-shadow:0 0 8px rgba(0,255,170,0.4);">📇 Voir la carte IA22</a>
 </body>
 </html>
