@@ -54,6 +54,55 @@
     </form>
   </section>
 
+
+  <!-- Bouton -->
+<button onclick="document.getElementById('modalIA22').style.display='block'" style="
+  padding: 10px 20px;
+  background-color: #00ffaa;
+  color: #000;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,255,170,0.4);
+  cursor: pointer;">
+  📇 À propos de l’auteur IA22
+</button>
+
+<!-- Fenêtre modale -->
+<div id="modalIA22" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-color:rgba(0,0,0,0.8);
+  z-index:9999;
+  text-align:center;
+  padding-top:60px;">
+  <div style="
+    background-color:#1a1a1a;
+    margin:auto;
+    padding:20px;
+    border:1px solid #00ffaa;
+    border-radius:12px;
+    width:80%;
+    max-width:600px;
+    box-shadow:0 0 15px rgba(0,255,170,0.3);">
+    <span onclick="document.getElementById('modalIA22').style.display='none'" style="
+      float:right;
+      font-size:28px;
+      font-weight:bold;
+      cursor:pointer;
+      color:#00ffaa;">&times;</span>
+    <img src="https://milyes.github.io/assets/auteur_IA22.png" alt="Carte IA22" style="width:100%; border-radius:8px; margin-top:10px;">
+    <p style="color:#ccc; font-family:'Courier New'; margin-top:12px;">
+      Zoubirou – Architecte IA22<br>
+      <a href="https://orcid.org/0009-0007-7571-3178" style="color:#00ffaa;" target="_blank">ORCID : 0009-0007-7571-3178</a><br>
+      <a href="https://milyes.github.io/IA22_LOGIC_ALGORITHM_FULL/" style="color:#00ffaa;" target="_blank">Voir le projet IA22</a>
+    </p>
+  </div>
+</div>
+
   <!-- Footer -->
   <footer class="py-8 text-center bg-gray-900">
     <p class="text-sm">&copy; 2025 NetSecurePro - Zoubirou Mohammed Ilyes | <a href="https://orcid.org/0009-0007-7571-3178" class="text-purple-400">ORCID</a></p>
