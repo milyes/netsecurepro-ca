@@ -1,4 +1,4 @@
-# NetSecurePro IA22 – Modules IA
+p# NetSecurePro IA22 – Modules IA
 
 **Plateforme IA modulaire** développée pour Termux, Android, et systèmes Linux sécurisés.
 
