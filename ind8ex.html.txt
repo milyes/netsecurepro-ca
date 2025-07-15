@@ -2,73 +2,57 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NetSecurePro - IA, Cybersécurité, Développement Mobile Intelligent" />
-  <title>NetSecurePro | IA & Cybersécurité</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-</head>
-<body class="bg-gray-900 text-white font-sans">
-  <!-- Splash Banner -->
-  <section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-purple-900 to-black">
-    <h1 class="text-5xl font-bold mb-4">NetSecurePro</h1>
-    <p class="text-xl mb-6">Cybersécurité & Intelligence Artificielle Mobile</p>
-    <a href="#services" class="bg-purple-600 hover:bg-purple-800 px-6 py-2 rounded-lg">Explorer</a>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="py-16 px-4 text-center">
-    <h2 class="text-3xl font-semibold mb-8">Nos Services</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Audit Cybersécurité</h3>
-        <p>Analyse des vulnérabilités, monitoring, gestion des risques.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Intelligence Artificielle</h3>
-        <p>Modules IA personnalisés, assistants vocaux, analyse automatisée.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-bold mb-2">Applications Mobiles</h3>
-        <p>Développement Flutter, Termux CLI, APK IA offline/online.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Chatbot IA -->
-  <section class="py-16 px-4 bg-black text-center">
-    <h2 class="text-3xl font-semibold mb-6">Assistant IA</h2>
-    <p class="mb-4">Posez votre question à notre IA intégrée :</p>
-    <textarea id="userInput" class="w-full max-w-md mx-auto p-4 text-black rounded" placeholder="Décrivez votre besoin..."></textarea>
-    <button onclick="sendToIA()" class="mt-4 px-6 py-2 bg-purple-600 hover:bg-purple-800 rounded">Envoyer à l'IA</button>
-    <p id="iaResponse" class="mt-6 text-green-400"></p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-4 bg-gray-800 text-center">
-    <h2 class="text-3xl font-semibold mb-6">Contact</h2>
-    <form class="max-w-md mx-auto">
-      <input type="text" placeholder="Nom" class="w-full mb-4 p-3 text-black rounded" required />
-      <input type="email" placeholder="Email" class="w-full mb-4 p-3 text-black rounded" required />
-      <textarea placeholder="Votre message..." class="w-full mb-4 p-3 text-black rounded" required></textarea>
-      <button type="submit" class="bg-green-600 hover:bg-green-800 px-6 py-2 rounded">Envoyer</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-8 text-center bg-gray-900">
-    <p class="text-sm">&copy; 2025 NetSecurePro - Zoubirou Mohammed Ilyes | <a href="https://orcid.org/0009-0007-7571-3178" class="text-purple-400">ORCID</a></p>
-  </footer>
-
-  <script>
-    function sendToIA() {
-      const input = document.getElementById("userInput").value;
-      const responseEl = document.getElementById("iaResponse");
-      if (input.toLowerCase().includes("audit")) {
-        responseEl.innerText = "L'IA recommande un audit de vulnérabilités en 3 étapes. Contactez-nous pour un devis personnalisé.";
-      } else {
-        responseEl.innerText = "Merci pour votre question. Un expert IA vous répondra sous peu.";
-      }
+  <title>🧠 NetSecure IA · Lancement imminent</title>
+  <style>
+    body {
+      background: linear-gradient(#0b0c2e, #141d3f);
+      color: #00ffe7;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      padding: 5vh;
     }
-  </script>
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: auto;
+    }
+    .pulse {
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+    .launch-box {
+      margin-top: 3em;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid #00ffe7;
+      padding: 2em;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .countdown {
+      font-size: 2em;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="pulse">🚀 NetSecure IA</h1>
+  <p>Gardien neuronique du multivers digital — notre cockpit orbitronique est en cours de synchronisation…</p>
+
+  <div class="launch-box">
+    <h2>🛡️ Lancement prévu :</h2>
+    <p class="countdown">Juillet 2025 · Phase Alpha</p>
+    <p>Site propulsé par l’IA orbitronique de Mohammed Ilyes Zoubirou</p>
+  </div>
+
+  <p style="margin-top:3em;">🔔 Abonnez-vous pour être prévenu du décollage</p>
+  <a href="mailto:contact@netsecurepro.ca" style="color:#00ffe7;">📨 contact@netsecurepro.ca</a>
 </body>
 </html>
