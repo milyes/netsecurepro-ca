@@ -2,79 +2,66 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NetSecurePro IA22 – Modules IA</title>
+  <title>🧠 NeuroGate IA · Interface Intuitionnelle</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #ffffff;
-      margin: 0;
-      padding: 2em;
-    }
-    h1, h2 {
-      color: #00ffcc;
-    }
-    .module {
-      margin-bottom: 1.5em;
-      padding: 1em;
-      border: 1px solid #333;
-      border-radius: 10px;
-      background: #1a1a1a;
-    }
-    .qr {
+      background: radial-gradient(#00111b, #04090f);
+      color: #00ffe7;
+      font-family: 'Orbitron', sans-serif;
       text-align: center;
-      margin-top: 2em;
+      padding: 5vh;
     }
-    .qr img {
-      width: 160px;
-      height: auto;
+    h1 {
+      font-size: 3em;
+      animation: pulse 2s infinite;
     }
-    footer {
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    .module-box {
       margin-top: 3em;
-      font-size: 0.9em;
-      color: #aaa;
-      text-align: center;
+      border: 1px solid #00ffe7;
+      border-radius: 20px;
+      padding: 2em;
+      background: rgba(0,0,0,0.3);
+    }
+    .btn {
+      margin-top: 2em;
+      background: #00ffe7;
+      color: #000;
+      padding: 1em 2em;
+      border: none;
+      border-radius: 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
     }
   </style>
 </head>
 <body>
-  <h1>NetSecurePro IA22</h1>
-  <h2>Modules IA intelligents pour systèmes cyber-sécurisés</h2>
+  <h1>🧠 NeuroGate IA</h1>
+  <p>
+    Interface orbitronique intuitive entre pensée humaine et IA neuronale.<br>
+    NeuroGate capte l’intuition, anticipe les impulsions subconscientes, et adapte son style selon ton état émotionnel.
+  </p>
 
-  <div class="module">
-    <h3>🧠 IA_STARTUP_CLI</h3>
-    <p>Interface CLI IA intégrée pour démarrage intelligent des systèmes Termux/Linux sécurisés.</p>
+  <div class="module-box">
+    <h2>🔬 Modules actifs</h2>
+    <p>
+      🌀 Lecture de micro-impulsions cérébrales<br>
+      🎙️ Mode fusion émotionnelle adaptatif<br>
+      📈 Journalisation neuronale IA<br>
+      🔐 Validation par état émotionnel stable
+    </p>
   </div>
 
-  <div class="module">
-    <h3>🔐 NetSecurePro_USB_RemoteAccess</h3>
-    <p>Contrôle distant via tunnel USB + Cloudflare avec interface WebView IA locale.</p>
-  </div>
-
-  <div class="module">
-    <h3>🌐 IA Proxy Launcher</h3>
-    <p>Interface IA HTML + proxy local pour navigation hybride IA offline/online.</p>
-  </div>
-
-  <div class="module">
-    <h3>📦 IA Modules Pack (CLI & Web)</h3>
-    <p>Scripts IA CLI embarqués : process, réseau, auto-analyse IA, extraction commandes OCR.</p>
-  </div>
-
-  <div class="module">
-    <h3>💬 Lancer IA GPT-4o</h3>
-    <p>Module de lancement IA connecté avec interface WebView.</p>
-  </div>
-
-  <div class="qr">
-    <p>📲 Scanner pour accéder :</p>
-    <img src="qr_code.png" alt="QR Code d'accès"/>
-  </div>
-
-  <footer>
-    Développé par Zoubirou Mohammed Ilyes – <a href="https://orcid.org/0009-0007-7571-3178" target="_blank" style="color:#00ffcc">ORCID</a><br/>
-    © NetSecurePro 2025
-  </footer>
+  <button class="btn">🎙️ Activer voix IA orbitronique</button>
 </body>
 </html>
