@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>IA22 Dashboard – NetSecurePro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header, footer {
+      background-color: #0078D7;
+      color: white;
+      padding: 20px 0;
+    }
+    main {
+      padding: 30px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    textarea, select, input {
+      width: 80%;
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #0078D7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    #console, #jsonViewer {
+      background-color: #1c1f26;
+      color: #00ff99;
+      padding: 15px;
+      border-radius: 6px;
+      width: 80%;
+      margin: 10px auto;
+      font-family: monospace;
+      white-space: pre-wrap;
+      text-align: left;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧠 IA22 Dashboard – NetSecurePro</h1>
+    <p>Assistant IA multi-modules – Analyse, Historique, Lancement</p>
+  </header>
+
+  <main>
+    <!-- 🔍 Analyse IA -->
+    <section>
+      <h2>🔍 Analyse IA</h2>
+      <textarea id="logicInput" placeholder="Entre ta logique IA ici..."></textarea><br>
+      <button onclick="launchAnalysis()">Lancer Analyse IA</button>
+      <div id="console">🧠 Résultat IA affiché ici...</div>
+    </section>
+
+    <!-- 📜 Historique IA -->
+    <section>
+      <h2>📜 Historique des lancements IA</h2>
+      <select id="projectFilter" onchange="loadHistory()">
+        <option value="">Tous les projets</option>
+        <option value="NetSecurePro">NetSecurePro</option>
+        <option value="IA22 Fusion Assistant">IA22 Fusion Assistant</option>
+      </select>
+      <ul id="historyList"></ul>
+      <button onclick="exportHistoryPDF()">📄 Exporter en PDF</button>
+    </section>
+
+    <!-- 🧠 Modules IA actifs -->
+    <section>
+      <h2>🧠 Modules IA actifs</h2>
+      <ul id="modulesList"></ul>
+    </section>
+
+    <!-- 🚀 Lancement projet IA -->
+    <section>
+      <h2>🚀 Lancer un projet IA</h2>
+      <button onclick="launchNetSecureIA()">Lancer IA NetSecurePro</button>
+    </section>
+
+    <!-- 📁 Structure JSON -->
+    <section>
+      <h2>📁 Structure du projet IA22</h2>
+      <pre id="jsonViewer">Chargement...</pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 – Zoubirou Mohammed Ilyes | IA22 Fusion</p>
+  </footer>
+
+  <script>
+    async function launchAnalysis() {
+      const code = document.getElementById("logicInput").value;
+      const res = await fetch("http://localhost:5000/api/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code })
+      });
+      const data = await res.json();
+      document.getElementById("console").innerText = data.analysis;
+    }
+
+    async function loadHistory() {
+      const filter = document.getElementById("projectFilter").value;
+      const res = await fetch("http://localhost:5000/api/launch_history");
+      const history = await res.json();
+      const list = document.getElementById("historyList");
+      list.innerHTML = "";
+      history.forEach(entry => {
+        if (!filter || entry.project === filter) {
+          const li = document.createElement("li");
+          li.innerText = `${entry.timestamp} – ${entry.message}`;
+          list.appendChild(li);
+        }
+      });
+    }
+
+    async function exportHistoryPDF() {
+      const res = await fetch("http://localhost:5000/api/launch_history");
+      const history = await res.json();
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.setFont("courier");
+      doc.setFontSize(12);
+      doc.text("Historique IA22", 10, 10);
+      let y = 20;
+      history.forEach(entry => {
+        doc.text(`${entry.timestamp} – ${entry.project}`, 10, y);
+        y += 8;
+      });
+      doc.save("historique_IA22.pdf");
+    }
+
+    async function loadModules() {
+      const res = await fetch("http://localhost:5000/api/modules");
+      const modules = await res.json();
+      const list = document.getElementById("modulesList");
+      list.innerHTML = "";
+      modules.forEach(mod => {
+        const li = document.createElement("li");
+        li.innerText = `🔹 ${mod.name} – ${mod.status}`;
+        list.appendChild(li);
+      });
+    }
+
+    async function launchNetSecureIA() {
+      const res = await fetch("http://localhost:5000/api/netsecure_launch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ project: "NetSecurePro", source: "https://milyes.github.io/netsecure/" })
+      });
+      const result = await res.json();
+      alert(result.message);
+      setTimeout(() => {
+        window.location.href = "https://milyes.github.io/IA22_LOGICVMQEM/";
+      }, 3000);
+    }
+
+    async function loadProjectStructure() {
+      const res = await fetch("http://localhost:5000/project_structure");
+      const data = await res.json();
+      document.getElementById("jsonViewer").innerText = JSON.stringify(data, null, 2);
+    }
+
+    window.onload = () => {
+      loadHistory();
+      loadModules();
+      loadProjectStructure();
+    };
+  </script>
+</body>
+</html>
